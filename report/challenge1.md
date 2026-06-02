@@ -22,9 +22,7 @@ This payload successfully bypassed authentication logic and returned a list of u
 
 **Screenshot 1: User Enumeration Result**
 
-```
 screenshots/challenge1/01-sql-injection-user-list.png
-```
 
 ---
 
@@ -34,18 +32,15 @@ I attempted to determine the number of columns in the SQL query using UNION SELE
 
 **Payloads that returned errors:**
 
-```
 1' UNION SELECT 1,2--
 1' UNION SELECT 1,2,3--
-```
 
 These returned SQL syntax errors because the number of columns did not match the original query structure.
 
 I then adjusted the payload:
 
-```
 1' UNION SELECT 1,2#
-```
+
 
 This executed successfully and confirmed that the query uses two columns.
 
@@ -53,9 +48,7 @@ This executed successfully and confirmed that the query uses two columns.
 
  **Screenshot 2: UNION SELECT Successful Execution**
 
-```
 screenshots/challenge1/02-union-select-column-test.png
-```
 
 ---
 
