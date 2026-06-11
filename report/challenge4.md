@@ -1,10 +1,10 @@
-PCAP Analysis and Web Resource Extraction
+## PCAP Analysis and Web Resource Extraction
 
-Overview
+## Overview
 
 In this challenge, I analyzed a packet capture file (SA.pcap) using Wireshark to identify the target system, trace HTTP communication, and locate a hidden file containing the Challenge 4 code. The analysis involved examining packet-level details, identifying active hosts, and reconstructing a web-accessible URL from captured traffic.
 
-Step 1: Identifying Network Communication at Packet Level
+## Step 1: Identifying Network Communication at Packet Level
 
 I began by opening the packet capture file in Wireshark:
 
@@ -35,7 +35,7 @@ From this, I was able to confirm the presence of active communication between in
 
 
 
-Step 2: Filtering HTTP Traffic
+## Step 2: Filtering HTTP Traffic
 
 After identifying the communication structure, I filtered the capture to focus on HTTP traffic only:
 
@@ -75,7 +75,7 @@ Key observed endpoints included:
 /data
 
 
-Step 4: Identifying the Suspicious Directory
+## Step 4: Identifying the Suspicious Directory
 
 Among all discovered endpoints, I focused on /data as the most relevant directory.
 
@@ -90,7 +90,7 @@ This made /data the most promising candidate for further investigation.
 
 
 
-Step 5: Accessing the Hidden File in Browser
+## Step 5: Accessing the Hidden File in Browser
 
 Using the discovered directory from the PCAP, I constructed the following URL:
 
@@ -139,6 +139,6 @@ The ability to access sensitive files without restriction indicates lack of moni
 
 Direct exposure of structured XML data indicates poor application design. Modern applications should avoid exposing raw data files and instead serve data through controlled application logic with validation and authentication.
 
-Conclusion
+## Conclusion
 
 Through packet-level inspection and HTTP traffic analysis, I identified the target system, reconstructed a hidden URL, and accessed a sensitive XML file containing the Challenge 4 code. This demonstrated how improper web configuration and exposed backend resources can lead to information disclosure through network traffic analysis.
