@@ -24,7 +24,7 @@ This payload successfully bypassed authentication logic and returned a list of u
 
 ---
 
-### Step 2: UNION SELECT Column Discovery
+## Step 2: UNION SELECT Column Discovery
 
 I attempted to determine the number of columns in the SQL query using UNION SELECT.
 
@@ -50,7 +50,7 @@ This executed successfully and confirmed that the query uses two columns.
 
 ---
 
-### Step 3: Extracting User Credentials
+## Step 3: Extracting User Credentials
 
 After confirming the correct column structure, I extracted usernames and password hashes from the database.
 
